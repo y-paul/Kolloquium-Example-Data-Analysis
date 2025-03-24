@@ -208,6 +208,8 @@ summary(exp_long)
 
 
 # now lets join this with the questionnaire data
+# there will now in exp_long be a few people with now quest data, that is because these are under the missing
+# file - for a real analysis, you might want to change that.
 exp_long <- left_join(exp_long, q_data, by=c(code="vp_code"))
 
 # please note the data structure here: while the experiment data is in long format,
