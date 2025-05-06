@@ -100,7 +100,7 @@ complete_data <- complete_data[complete_data$vpcode!="1199MLNK6875",]
 dates <- as.POSIXct(complete_data$submitdate, format = "%Y-%m-%d %H:%M:%S")
 cutoff <- as.POSIXct("2085-05-03 12:00:00")
 complete_data <- complete_data[dates>=cutoff,]
-# --> includes all submitdates made before cutoff (maybe the day we activated the study
+# --> includes all submitdates made after cutoff (maybe the day we activated the study
 # on SONA)
 
 
