@@ -87,5 +87,18 @@ sumtable(full_data %>% select(
 
 # okay no systematic differences!
 # lets get to hypothesis testing!
-
+ggplot(data, aes(x = bdi_t0)) +
+  geom_histogram(aes(y = ..density..), 
+                 binwidth = 3, 
+                 color = "black", 
+                 fill = "skyblue") +
+  stat_function(fun = dnorm, 
+                args = list(mean = mean(data$bdi_t0, na.rm = TRUE),
+                            sd = sd(data$bdi_t0, na.rm = TRUE)),
+                color = "red", 
+                size = 1) +
+  labs(title = "Verteilung des BDI (Baseline)",
+       x = "BDI-Wert bei Baseline",
+       y = "Dichte") +
+  theme_minimal()
 
